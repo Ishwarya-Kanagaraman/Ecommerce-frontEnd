@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect, useState, useContext, useMemo } from "react";
 import axios from "axios";
 import { GlobalState } from "../../../GlobalState";
 import Loading from "../Utils/Loading/Loading";
@@ -52,7 +52,7 @@ function CreateProduct() {
             }
           
     
-  },[param.id,products,initialState])
+  },[param.id,products])
 
   const styleUpload = {
     display: images ? "block" : "none",
