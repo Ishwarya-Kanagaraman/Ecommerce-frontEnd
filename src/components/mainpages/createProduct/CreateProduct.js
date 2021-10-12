@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext, useMemo } from "react";
+import React, { useEffect, useState, useContext} from "react";
 import axios from "axios";
 import { GlobalState } from "../../../GlobalState";
 import Loading from "../Utils/Loading/Loading";
@@ -6,19 +6,21 @@ import {useHistory,useParams} from "react-router-dom"
 
 
 function CreateProduct() {
-  const initialState = {
-    product_id: "",
-    title: "",
-    price: 0,
-    description:
-      "This product is going to create a revolution the market so that it can change a huge in industry",
-    content:
-      "The people who studying MERN stack will going to have a great future in the IT industry",
-    category: "",
-    _id:''
-  };
+ 
+  // const initialState = {
+  //   product_id: "",
+  //   title: "",
+  //   price: 0,
+  //   description:
+  //     "This product is going to create a revolution the market so that it can change a huge in industry",
+  //   content:
+  //     "The people who studying MERN stack will going to have a great future in the IT industry",
+  //   category: "",
+  //   _id:''
+  // };
   const state = useContext(GlobalState);
-  const [product, setProduct] = useState(initialState);
+  // const [product, setProduct] = useState(initialState);
+  const [product, setProduct] = useState({});
   const [categories] = state.categoriesAPI.categories;
   const [images, setImages] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -33,6 +35,7 @@ function CreateProduct() {
   const [onEdit,setOnEdit]=useState(false)
   const [callback,setCallback]=state.ProductsAPI.callback
 
+  
 
   useEffect(()=>{
     if(param.id){
@@ -47,11 +50,9 @@ function CreateProduct() {
          }
           else{
             setOnEdit(false)
-              setProduct(initialState)
+              setProduct({})
               setImages(false)
             }
-          
-    
   },[param.id,products])
 
   const styleUpload = {
