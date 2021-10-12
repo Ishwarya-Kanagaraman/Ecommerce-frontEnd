@@ -52,7 +52,7 @@ function CreateProduct() {
             }
           
     
-  },[param.id,products])
+  },[param.id,products,initialState])
 
   const styleUpload = {
     display: images ? "block" : "none",
