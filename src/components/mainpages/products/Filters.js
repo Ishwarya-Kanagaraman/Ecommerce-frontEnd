@@ -1,8 +1,7 @@
-import React, {useContext, useState} from 'react'
+import React, {useContext} from 'react'
 import {GlobalState}from "../../../GlobalState"
 function Filters() {
        const state=useContext(GlobalState);
-       const [products,setProducts] = state.ProductsAPI.products;
        const [categories]=state.categoriesAPI.categories;
        const [category, setCategory] = state.ProductsAPI.category;
        const [sort, setSort] = state.ProductsAPI.sort;
